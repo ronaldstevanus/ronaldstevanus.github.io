@@ -1,0 +1,8 @@
+title: Ronald Stevanus
+description: 
+google_analytics: UA-66094258-1
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
