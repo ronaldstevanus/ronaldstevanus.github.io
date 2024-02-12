@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.92.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.122.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="supported-color-schemes" content="light dark"><title>Auto publish blog using GitHub Actions&nbsp;&ndash;&nbsp;Ronald Stevanus</title><link rel="stylesheet" href="/css/core.min.753adff763c1529c0fe8e54141e88a534d4da1eee79d85b9a1bffa8c43f3274e09faf4ce6bd12cff20c87db4151cd989.css" integrity="sha384-dTrf92PBUpwP6OVBQeiKU01Noe7nnYW5ob/6jEPzJ04J&#43;vTOa9Es/yDIfbQVHNmJ"><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Auto publish blog using GitHub Actions" /><body><section id="header">
@@ -26,7 +26,7 @@ For more info about GitHub Pages you can read more from <a href="https://pages.g
 <p>GitHub Actions will be used for automating the publishing of the blog to the GitHub Pages.
 Well, technically you can automate anything using GitHub Actions 🙂.
 GitHub Actions is being setup by creating a workflow and we&rsquo;ll define the steps of publishing
-the blog into the GitHub Actions' workflow.</p>
+the blog into the GitHub Actions&rsquo; workflow.</p>
 <p>The flow to auto publish the blog can be described with this simple diagram:
 <img  src="/images/blog-auto-deploy-flow.jpg"
         alt="Auto deploy blog diagram"/></p>
@@ -52,7 +52,7 @@ to do it when I created a <code>tag</code>.</p>
 on:
   push:
     tags:
-      - 'v*'
+      - &#39;v*&#39;
 
 jobs:
   build:
@@ -69,17 +69,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ronaldstevanus/ronaldstevanus.github.io
-          path: './ronaldstevanus.github.io'
+          path: &#39;./ronaldstevanus.github.io&#39;
           token: ${{secrets.GH_PAGES_TOKEN}}
       - name: Publish website
         run: |
           cd ronaldstevanus.github.io
           git rm -rf .
           cp -r ../public/. .
-          git config --local user.name &quot;github-actions[bot]&quot;
-          git config --local user.email &quot;41898282+github-actions[bot]@users.noreply.github.com&quot;
+          git config --local user.name &#34;github-actions[bot]&#34;
+          git config --local user.email &#34;41898282+github-actions[bot]@users.noreply.github.com&#34;
           git add -A
-          git commit -m &quot;publish&quot;
+          git commit -m &#34;publish&#34;
           git push origin HEAD -f
         env:
           REPO_KEY: ${{secrets.GH_PAGES_TOKEN}}
@@ -93,7 +93,7 @@ jobs:
         <span> • </span>
         <a href="https://www.linkedin.com/in/ronaldstevanus" target="_blank">linkedin</a>
     </p></div></section>
-<script type="application/javascript">
+<script>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
